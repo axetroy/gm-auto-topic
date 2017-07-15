@@ -110,4 +110,4 @@ class Topic {
   }
 }
 
-new Topic();
+new Topic().init();
