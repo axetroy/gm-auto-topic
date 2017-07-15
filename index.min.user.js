@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name              fetch-keyword-to-topic (typescript)
+// @name              gm-autotopic (typescript)
 // @author            Axetroy
 // @collaborator      Axetroy
-// @description       fetch-keyword-to-topic
+// @description       gm-autotopic
 // @version           0.1.0
-// @update            2017-07-16 00:26:07
+// @update            2017-07-16 00:29:29
 // @grant             GM_xmlhttpRequest
 // @include           http://github.com/*/*
 // @include           https://github.com/*/*

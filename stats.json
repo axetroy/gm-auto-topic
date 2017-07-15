@@ -3,7 +3,7 @@
   "warnings": [],
   "version": "3.2.0",
   "hash": "d139cd0e842fdf67d17b",
-  "time": 1950,
+  "time": 1975,
   "publicPath": "",
   "assetsByChunkName": {
     "index": "index.user.js",
@@ -12,7 +12,7 @@
   "assets": [
     {
       "name": "index.user.js",
-      "size": 17630,
+      "size": 17610,
       "chunks": [
         0,
         1
@@ -24,7 +24,7 @@
     },
     {
       "name": "index.min.user.js",
-      "size": 7085,
+      "size": 7065,
       "chunks": [
         1,
         0
