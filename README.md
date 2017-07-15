@@ -5,7 +5,7 @@
 ![Node](https://img.shields.io/badge/node-%3E=6.0-blue.svg?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-gm脚本的模板
+GM脚本，用于给github项目添加topic，根据项目的package.json文件的keywords字段
 
 ### 反馈地址
 
