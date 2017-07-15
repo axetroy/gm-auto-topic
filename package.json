@@ -1,7 +1,7 @@
 {
-  "name": "fetch-keyword-to-topic",
+  "name": "gm-autotopic",
   "version": "0.1.0",
-  "description": "fetch-keyword-to-topic",
+  "description": "gm-autotopic",
   "scripts": {
     "test": "echo 'Test success!'",
     "build": "webpack --display-error-details --progress --colors",
