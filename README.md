@@ -35,9 +35,9 @@ Qupzilla | 不需要额外软件
 
 2. 安装脚本
 
-[点击从Github安装](https://github.com/axetroy/gm-auto-topic/raw/gh-pages/gm-auto-topic.min.user.js)
+[点击从Github安装](https://github.com/axetroy/gm-auto-topic/raw/gh-pages/index.user.js)
 
-[点击从GreasyFork安装](https://greasyfork.org/scripts/11915-gm-auto-topic-typescript/code/gm-auto-topic%20(typescript).user.js)
+[点击从GreasyFork安装](https://greasyfork.org/scripts/31470-gm-autotopic-typescript/code/gm-autotopic%20(typescript).user.js)
 
 ### 支持的站点
 
