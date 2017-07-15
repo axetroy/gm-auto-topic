@@ -1,8 +1,10 @@
-import http from './lib/http';
-import has = Reflect.has;
+import http from 'gm-http';
 
 class Topic {
   constructor() {
+
+  }
+  init(){
     this.makeSureFetchButton();
     this.onStateChange(() => {
       const timer = setInterval(() => {

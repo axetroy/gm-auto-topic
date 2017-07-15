@@ -23,7 +23,7 @@ module.exports = {
   },
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.coffee', '.js', '.ts']
+    extensions: ['.ts', '.tsx', '.js']
   },
   module: {
     loaders: [{ test: /\.tsx?$/, loader: 'ts-loader' }]
