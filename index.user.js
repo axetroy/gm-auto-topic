@@ -4,7 +4,7 @@
 // @collaborator      Axetroy
 // @description       gm-autotopic
 // @version           0.1.0
-// @update            2017-07-16 00:29:29
+// @update            2017-07-16 00:31:37
 // @grant             GM_xmlhttpRequest
 // @include           http://github.com/*/*
 // @include           https://github.com/*/*
@@ -247,7 +247,7 @@ var Topic = (function () {
     };
     return Topic;
 }());
-new Topic();
+new Topic().init();
 
 
 /***/ }),
