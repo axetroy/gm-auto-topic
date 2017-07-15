@@ -1,0 +1,326 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.2.0",
+  "hash": "d139cd0e842fdf67d17b",
+  "time": 1950,
+  "publicPath": "",
+  "assetsByChunkName": {
+    "index": "index.user.js",
+    "index.min": "index.min.user.js"
+  },
+  "assets": [
+    {
+      "name": "index.user.js",
+      "size": 17630,
+      "chunks": [
+        0,
+        1
+      ],
+      "chunkNames": [
+        "index"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "index.min.user.js",
+      "size": 7085,
+      "chunks": [
+        1,
+        0
+      ],
+      "chunkNames": [
+        "index.min"
+      ],
+      "emitted": true
+    }
+  ],
+  "entrypoints": {
+    "index": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "index.user.js"
+      ]
+    },
+    "index.min": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "index.min.user.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 14185,
+      "names": [
+        "index"
+      ],
+      "files": [
+        "index.user.js"
+      ],
+      "hash": "8531c344568653bd0fb0",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "name": "./index.ts",
+          "index": 0,
+          "index2": 1,
+          "size": 7712,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "\"use strict\";\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\r\n    return new (P || (P = Promise))(function (resolve, reject) {\r\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\r\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\r\n        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }\r\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\r\n    });\r\n};\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = y[op[0] & 2 ? \"return\" : op[0] ? \"throw\" : \"next\"]) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [0, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar gm_http_1 = require(\"gm-http\");\r\nvar Topic = (function () {\r\n    function Topic() {\r\n    }\r\n    Topic.prototype.init = function () {\r\n        var _this = this;\r\n        this.makeSureFetchButton();\r\n        this.onStateChange(function () {\r\n            var timer = setInterval(function () {\r\n                clearInterval(timer);\r\n                _this.makeSureFetchButton();\r\n            }, 500);\r\n        });\r\n    };\r\n    Topic.prototype.makeSureFetchButton = function () {\r\n        var $topicsContainer = document.getElementById('topics-list-container');\r\n        var $manageTopics = document.querySelector('.js-repo-topics-form-toggle');\r\n        if (!$topicsContainer || !$manageTopics)\r\n            return;\r\n        $topicsContainer.appendChild(this.createButton());\r\n    };\r\n    Topic.prototype.createButton = function () {\r\n        var $button = document.createElement('button');\r\n        $button.className = 'btn-link';\r\n        $button.type = 'button';\r\n        $button.id = 'fetch-from-package';\r\n        $button.style.color = '#4CAF50';\r\n        $button.innerHTML = 'Fetch from package.json';\r\n        $button.onclick = this.onclickHandler.bind(this);\r\n        return $button;\r\n    };\r\n    Topic.prototype.onStateChange = function (func) {\r\n        addEventListener('click', function (event) {\r\n            var $done = document.querySelector('button.js-repo-topics-form-done');\r\n            if (event.target !== $done)\r\n                return;\r\n            func(event);\r\n        }, false);\r\n    };\r\n    Topic.prototype.onclickHandler = function (event) {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            function check() {\r\n                var $formUl = document.querySelector('.js-tag-input-selected-tags');\r\n                if (!$formUl)\r\n                    return;\r\n                clearInterval(timer);\r\n                var formValues = Array.from($formUl.querySelectorAll('input')).map(function ($input) { return $input.value; });\r\n                var keywords = packageJson['keywords'] || [];\r\n                var $input = document.querySelector('#repo_topics');\r\n                keywords\r\n                    .filter(function (kw) { return kw; })\r\n                    .filter(function (kw) { return formValues.findIndex(function (v) { return v === kw; }) < 0; })\r\n                    .forEach(function (keyword) {\r\n                    $input.value = keyword.replace(/\\./g, '-');\r\n                    $input.click();\r\n                    $input.blur();\r\n                });\r\n                $input.focus();\r\n            }\r\n            var $button, packageJson, err_1, timer;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        event.preventDefault();\r\n                        $button = document.querySelector('.btn-link.js-repo-topics-form-toggle.js-details-target');\r\n                        if (!$button)\r\n                            return [2 /*return*/, console.warn(\"Can't found the button to show topic...\")];\r\n                        $button.click();\r\n                        packageJson = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, this.fetchPackage()];\r\n                    case 2:\r\n                        packageJson = _a.sent();\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_1 = _a.sent();\r\n                        console.error(err_1);\r\n                        return [3 /*break*/, 4];\r\n                    case 4:\r\n                        timer = setInterval(check, 500);\r\n                        return [2 /*return*/];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    Topic.prototype.fetchPackage = function () {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            var $package, packageUrl, res, err_2;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        $package = document.querySelector('tr.js-navigation-item td.content a[title=\"package.json\"]');\r\n                        packageUrl = $package.href;\r\n                        packageUrl =\r\n                            packageUrl\r\n                                .replace('/blob/', '/')\r\n                                .replace('github', 'raw.githubusercontent') + (\"?v=\" + Math.random());\r\n                        res = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, gm_http_1.default.get(packageUrl)];\r\n                    case 2:\r\n                        res = _a.sent();\r\n                        res = JSON.parse(res.response);\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_2 = _a.sent();\r\n                        console.error(err_2);\r\n                        return [3 /*break*/, 4];\r\n                    case 4: return [2 /*return*/, res];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    return Topic;\r\n}());\r\nnew Topic();\r\n"
+        },
+        {
+          "id": 1,
+          "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\gm-http\\dist\\index.js",
+          "name": "./node_modules/gm-http/dist/index.js",
+          "index": 1,
+          "index2": 0,
+          "size": 6473,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "issuerId": 0,
+          "issuerName": "./index.ts",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+              "module": "./index.ts",
+              "moduleName": "./index.ts",
+              "type": "cjs require",
+              "userRequest": "gm-http",
+              "loc": "38:16-34"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "(function webpackUniversalModuleDefinition(root, factory) {\n\tif(typeof exports === 'object' && typeof module === 'object')\n\t\tmodule.exports = factory();\n\telse if(typeof define === 'function' && define.amd)\n\t\tdefine([], factory);\n\telse if(typeof exports === 'object')\n\t\texports[\"gmHttp\"] = factory();\n\telse\n\t\troot[\"gmHttp\"] = factory();\n})(this, function() {\nreturn /******/ (function(modules) { // webpackBootstrap\n/******/ \t// The module cache\n/******/ \tvar installedModules = {};\n/******/\n/******/ \t// The require function\n/******/ \tfunction __webpack_require__(moduleId) {\n/******/\n/******/ \t\t// Check if module is in cache\n/******/ \t\tif(installedModules[moduleId]) {\n/******/ \t\t\treturn installedModules[moduleId].exports;\n/******/ \t\t}\n/******/ \t\t// Create a new module (and put it into the cache)\n/******/ \t\tvar module = installedModules[moduleId] = {\n/******/ \t\t\ti: moduleId,\n/******/ \t\t\tl: false,\n/******/ \t\t\texports: {}\n/******/ \t\t};\n/******/\n/******/ \t\t// Execute the module function\n/******/ \t\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n/******/\n/******/ \t\t// Flag the module as loaded\n/******/ \t\tmodule.l = true;\n/******/\n/******/ \t\t// Return the exports of the module\n/******/ \t\treturn module.exports;\n/******/ \t}\n/******/\n/******/\n/******/ \t// expose the modules object (__webpack_modules__)\n/******/ \t__webpack_require__.m = modules;\n/******/\n/******/ \t// expose the module cache\n/******/ \t__webpack_require__.c = installedModules;\n/******/\n/******/ \t// define getter function for harmony exports\n/******/ \t__webpack_require__.d = function(exports, name, getter) {\n/******/ \t\tif(!__webpack_require__.o(exports, name)) {\n/******/ \t\t\tObject.defineProperty(exports, name, {\n/******/ \t\t\t\tconfigurable: false,\n/******/ \t\t\t\tenumerable: true,\n/******/ \t\t\t\tget: getter\n/******/ \t\t\t});\n/******/ \t\t}\n/******/ \t};\n/******/\n/******/ \t// getDefaultExport function for compatibility with non-harmony modules\n/******/ \t__webpack_require__.n = function(module) {\n/******/ \t\tvar getter = module && module.__esModule ?\n/******/ \t\t\tfunction getDefault() { return module['default']; } :\n/******/ \t\t\tfunction getModuleExports() { return module; };\n/******/ \t\t__webpack_require__.d(getter, 'a', getter);\n/******/ \t\treturn getter;\n/******/ \t};\n/******/\n/******/ \t// Object.prototype.hasOwnProperty.call\n/******/ \t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\n/******/\n/******/ \t// __webpack_public_path__\n/******/ \t__webpack_require__.p = \"\";\n/******/\n/******/ \t// Load entry module and return exports\n/******/ \treturn __webpack_require__(__webpack_require__.s = 0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ (function(module, exports, __webpack_require__) {\n\n\"use strict\";\n\r\n/**\r\n * Created by axetroy on 17-6-23.\r\n */\r\n/// <reference path=\"./index.d.ts\" />\r\nvar __assign = (this && this.__assign) || Object.assign || function(t) {\r\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n        s = arguments[i];\r\n        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n            t[p] = s[p];\r\n    }\r\n    return t;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nfunction isFunction(func) {\r\n    return typeof func === 'function';\r\n}\r\nvar Http = (function () {\r\n    function Http(config) {\r\n        this.config = config;\r\n    }\r\n    Http.prototype.create = function (config) {\r\n        return new Http(config);\r\n    };\r\n    Http.prototype.request = function (method, url, data, header, config) {\r\n        if (data === void 0) { data = ''; }\r\n        if (header === void 0) { header = {}; }\r\n        if (config === void 0) { config = {}; }\r\n        return new Promise(function (resolve, reject) {\r\n            var commonRequestConfig = {\r\n                method: method,\r\n                url: url,\r\n                data: data,\r\n                header: header\r\n            };\r\n            var GM_xmlhttpRequestConfig = __assign({}, commonRequestConfig, config);\r\n            var onreadystatechange = GM_xmlhttpRequestConfig.onreadystatechange, onerror = GM_xmlhttpRequestConfig.onerror, onabort = GM_xmlhttpRequestConfig.onabort, ontimeout = GM_xmlhttpRequestConfig.ontimeout;\r\n            GM_xmlhttpRequestConfig.synchronous = true; // async\r\n            GM_xmlhttpRequestConfig.onreadystatechange = function (response) {\r\n                isFunction(onreadystatechange) &&\r\n                    onreadystatechange.call(this, response);\r\n                console.log(response.readyState);\r\n                if (response.readyState !== 4)\r\n                    return;\r\n                response.status >= 200 && response.status < 400 && response.finalUrl\r\n                    ? resolve(response)\r\n                    : reject(response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onerror = function (response) {\r\n                isFunction(onerror) && onerror.call(this, response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onabort = function (response) {\r\n                isFunction(onabort) && onabort.call(this, response);\r\n                reject(response);\r\n                resolve();\r\n            };\r\n            GM_xmlhttpRequestConfig.ontimeout = function (response) {\r\n                isFunction(ontimeout) && ontimeout.call(this, response);\r\n                reject(response);\r\n            };\r\n            console.log(GM_xmlhttpRequestConfig);\r\n            GM_xmlhttpRequest(__assign({}, GM_xmlhttpRequestConfig));\r\n        });\r\n    };\r\n    Http.prototype.get = function (url, data, header, config) {\r\n        return this.request('GET', url, data, header, config);\r\n    };\r\n    Http.prototype.post = function (url, data, header, config) {\r\n        return this.request('POST', url, data, header, config);\r\n    };\r\n    Http.prototype.put = function (url, data, header, config) {\r\n        return this.request('PUT', url, data, header, config);\r\n    };\r\n    Http.prototype['delete'] = function (url, data, header, config) {\r\n        return this.request('DELETE', url, data, header, config);\r\n    };\r\n    Http.prototype.head = function (url, data, header, config) {\r\n        return this.request('HEAD', url, data, header, config);\r\n    };\r\n    return Http;\r\n}());\r\nvar timeout = 5000;\r\nexports.timeout = timeout;\r\nvar http = new Http({ timeout: timeout });\r\nexports.http = http;\r\nexports.default = http;\r\n\n\n/***/ })\n/******/ ]);\n});"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "moduleIdentifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "moduleName": "./index.ts",
+          "loc": "",
+          "name": "index",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 14185,
+      "names": [
+        "index.min"
+      ],
+      "files": [
+        "index.min.user.js"
+      ],
+      "hash": "09e5c81393940aaa41aa",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "name": "./index.ts",
+          "index": 0,
+          "index2": 1,
+          "size": 7712,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "\"use strict\";\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\r\n    return new (P || (P = Promise))(function (resolve, reject) {\r\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\r\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\r\n        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }\r\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\r\n    });\r\n};\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = y[op[0] & 2 ? \"return\" : op[0] ? \"throw\" : \"next\"]) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [0, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar gm_http_1 = require(\"gm-http\");\r\nvar Topic = (function () {\r\n    function Topic() {\r\n    }\r\n    Topic.prototype.init = function () {\r\n        var _this = this;\r\n        this.makeSureFetchButton();\r\n        this.onStateChange(function () {\r\n            var timer = setInterval(function () {\r\n                clearInterval(timer);\r\n                _this.makeSureFetchButton();\r\n            }, 500);\r\n        });\r\n    };\r\n    Topic.prototype.makeSureFetchButton = function () {\r\n        var $topicsContainer = document.getElementById('topics-list-container');\r\n        var $manageTopics = document.querySelector('.js-repo-topics-form-toggle');\r\n        if (!$topicsContainer || !$manageTopics)\r\n            return;\r\n        $topicsContainer.appendChild(this.createButton());\r\n    };\r\n    Topic.prototype.createButton = function () {\r\n        var $button = document.createElement('button');\r\n        $button.className = 'btn-link';\r\n        $button.type = 'button';\r\n        $button.id = 'fetch-from-package';\r\n        $button.style.color = '#4CAF50';\r\n        $button.innerHTML = 'Fetch from package.json';\r\n        $button.onclick = this.onclickHandler.bind(this);\r\n        return $button;\r\n    };\r\n    Topic.prototype.onStateChange = function (func) {\r\n        addEventListener('click', function (event) {\r\n            var $done = document.querySelector('button.js-repo-topics-form-done');\r\n            if (event.target !== $done)\r\n                return;\r\n            func(event);\r\n        }, false);\r\n    };\r\n    Topic.prototype.onclickHandler = function (event) {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            function check() {\r\n                var $formUl = document.querySelector('.js-tag-input-selected-tags');\r\n                if (!$formUl)\r\n                    return;\r\n                clearInterval(timer);\r\n                var formValues = Array.from($formUl.querySelectorAll('input')).map(function ($input) { return $input.value; });\r\n                var keywords = packageJson['keywords'] || [];\r\n                var $input = document.querySelector('#repo_topics');\r\n                keywords\r\n                    .filter(function (kw) { return kw; })\r\n                    .filter(function (kw) { return formValues.findIndex(function (v) { return v === kw; }) < 0; })\r\n                    .forEach(function (keyword) {\r\n                    $input.value = keyword.replace(/\\./g, '-');\r\n                    $input.click();\r\n                    $input.blur();\r\n                });\r\n                $input.focus();\r\n            }\r\n            var $button, packageJson, err_1, timer;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        event.preventDefault();\r\n                        $button = document.querySelector('.btn-link.js-repo-topics-form-toggle.js-details-target');\r\n                        if (!$button)\r\n                            return [2 /*return*/, console.warn(\"Can't found the button to show topic...\")];\r\n                        $button.click();\r\n                        packageJson = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, this.fetchPackage()];\r\n                    case 2:\r\n                        packageJson = _a.sent();\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_1 = _a.sent();\r\n                        console.error(err_1);\r\n                        return [3 /*break*/, 4];\r\n                    case 4:\r\n                        timer = setInterval(check, 500);\r\n                        return [2 /*return*/];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    Topic.prototype.fetchPackage = function () {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            var $package, packageUrl, res, err_2;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        $package = document.querySelector('tr.js-navigation-item td.content a[title=\"package.json\"]');\r\n                        packageUrl = $package.href;\r\n                        packageUrl =\r\n                            packageUrl\r\n                                .replace('/blob/', '/')\r\n                                .replace('github', 'raw.githubusercontent') + (\"?v=\" + Math.random());\r\n                        res = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, gm_http_1.default.get(packageUrl)];\r\n                    case 2:\r\n                        res = _a.sent();\r\n                        res = JSON.parse(res.response);\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_2 = _a.sent();\r\n                        console.error(err_2);\r\n                        return [3 /*break*/, 4];\r\n                    case 4: return [2 /*return*/, res];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    return Topic;\r\n}());\r\nnew Topic();\r\n"
+        },
+        {
+          "id": 1,
+          "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\gm-http\\dist\\index.js",
+          "name": "./node_modules/gm-http/dist/index.js",
+          "index": 1,
+          "index2": 0,
+          "size": 6473,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0,
+            1
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "issuerId": 0,
+          "issuerName": "./index.ts",
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+              "module": "./index.ts",
+              "moduleName": "./index.ts",
+              "type": "cjs require",
+              "userRequest": "gm-http",
+              "loc": "38:16-34"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "(function webpackUniversalModuleDefinition(root, factory) {\n\tif(typeof exports === 'object' && typeof module === 'object')\n\t\tmodule.exports = factory();\n\telse if(typeof define === 'function' && define.amd)\n\t\tdefine([], factory);\n\telse if(typeof exports === 'object')\n\t\texports[\"gmHttp\"] = factory();\n\telse\n\t\troot[\"gmHttp\"] = factory();\n})(this, function() {\nreturn /******/ (function(modules) { // webpackBootstrap\n/******/ \t// The module cache\n/******/ \tvar installedModules = {};\n/******/\n/******/ \t// The require function\n/******/ \tfunction __webpack_require__(moduleId) {\n/******/\n/******/ \t\t// Check if module is in cache\n/******/ \t\tif(installedModules[moduleId]) {\n/******/ \t\t\treturn installedModules[moduleId].exports;\n/******/ \t\t}\n/******/ \t\t// Create a new module (and put it into the cache)\n/******/ \t\tvar module = installedModules[moduleId] = {\n/******/ \t\t\ti: moduleId,\n/******/ \t\t\tl: false,\n/******/ \t\t\texports: {}\n/******/ \t\t};\n/******/\n/******/ \t\t// Execute the module function\n/******/ \t\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n/******/\n/******/ \t\t// Flag the module as loaded\n/******/ \t\tmodule.l = true;\n/******/\n/******/ \t\t// Return the exports of the module\n/******/ \t\treturn module.exports;\n/******/ \t}\n/******/\n/******/\n/******/ \t// expose the modules object (__webpack_modules__)\n/******/ \t__webpack_require__.m = modules;\n/******/\n/******/ \t// expose the module cache\n/******/ \t__webpack_require__.c = installedModules;\n/******/\n/******/ \t// define getter function for harmony exports\n/******/ \t__webpack_require__.d = function(exports, name, getter) {\n/******/ \t\tif(!__webpack_require__.o(exports, name)) {\n/******/ \t\t\tObject.defineProperty(exports, name, {\n/******/ \t\t\t\tconfigurable: false,\n/******/ \t\t\t\tenumerable: true,\n/******/ \t\t\t\tget: getter\n/******/ \t\t\t});\n/******/ \t\t}\n/******/ \t};\n/******/\n/******/ \t// getDefaultExport function for compatibility with non-harmony modules\n/******/ \t__webpack_require__.n = function(module) {\n/******/ \t\tvar getter = module && module.__esModule ?\n/******/ \t\t\tfunction getDefault() { return module['default']; } :\n/******/ \t\t\tfunction getModuleExports() { return module; };\n/******/ \t\t__webpack_require__.d(getter, 'a', getter);\n/******/ \t\treturn getter;\n/******/ \t};\n/******/\n/******/ \t// Object.prototype.hasOwnProperty.call\n/******/ \t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\n/******/\n/******/ \t// __webpack_public_path__\n/******/ \t__webpack_require__.p = \"\";\n/******/\n/******/ \t// Load entry module and return exports\n/******/ \treturn __webpack_require__(__webpack_require__.s = 0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ (function(module, exports, __webpack_require__) {\n\n\"use strict\";\n\r\n/**\r\n * Created by axetroy on 17-6-23.\r\n */\r\n/// <reference path=\"./index.d.ts\" />\r\nvar __assign = (this && this.__assign) || Object.assign || function(t) {\r\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n        s = arguments[i];\r\n        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n            t[p] = s[p];\r\n    }\r\n    return t;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nfunction isFunction(func) {\r\n    return typeof func === 'function';\r\n}\r\nvar Http = (function () {\r\n    function Http(config) {\r\n        this.config = config;\r\n    }\r\n    Http.prototype.create = function (config) {\r\n        return new Http(config);\r\n    };\r\n    Http.prototype.request = function (method, url, data, header, config) {\r\n        if (data === void 0) { data = ''; }\r\n        if (header === void 0) { header = {}; }\r\n        if (config === void 0) { config = {}; }\r\n        return new Promise(function (resolve, reject) {\r\n            var commonRequestConfig = {\r\n                method: method,\r\n                url: url,\r\n                data: data,\r\n                header: header\r\n            };\r\n            var GM_xmlhttpRequestConfig = __assign({}, commonRequestConfig, config);\r\n            var onreadystatechange = GM_xmlhttpRequestConfig.onreadystatechange, onerror = GM_xmlhttpRequestConfig.onerror, onabort = GM_xmlhttpRequestConfig.onabort, ontimeout = GM_xmlhttpRequestConfig.ontimeout;\r\n            GM_xmlhttpRequestConfig.synchronous = true; // async\r\n            GM_xmlhttpRequestConfig.onreadystatechange = function (response) {\r\n                isFunction(onreadystatechange) &&\r\n                    onreadystatechange.call(this, response);\r\n                console.log(response.readyState);\r\n                if (response.readyState !== 4)\r\n                    return;\r\n                response.status >= 200 && response.status < 400 && response.finalUrl\r\n                    ? resolve(response)\r\n                    : reject(response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onerror = function (response) {\r\n                isFunction(onerror) && onerror.call(this, response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onabort = function (response) {\r\n                isFunction(onabort) && onabort.call(this, response);\r\n                reject(response);\r\n                resolve();\r\n            };\r\n            GM_xmlhttpRequestConfig.ontimeout = function (response) {\r\n                isFunction(ontimeout) && ontimeout.call(this, response);\r\n                reject(response);\r\n            };\r\n            console.log(GM_xmlhttpRequestConfig);\r\n            GM_xmlhttpRequest(__assign({}, GM_xmlhttpRequestConfig));\r\n        });\r\n    };\r\n    Http.prototype.get = function (url, data, header, config) {\r\n        return this.request('GET', url, data, header, config);\r\n    };\r\n    Http.prototype.post = function (url, data, header, config) {\r\n        return this.request('POST', url, data, header, config);\r\n    };\r\n    Http.prototype.put = function (url, data, header, config) {\r\n        return this.request('PUT', url, data, header, config);\r\n    };\r\n    Http.prototype['delete'] = function (url, data, header, config) {\r\n        return this.request('DELETE', url, data, header, config);\r\n    };\r\n    Http.prototype.head = function (url, data, header, config) {\r\n        return this.request('HEAD', url, data, header, config);\r\n    };\r\n    return Http;\r\n}());\r\nvar timeout = 5000;\r\nexports.timeout = timeout;\r\nvar http = new Http({ timeout: timeout });\r\nexports.http = http;\r\nexports.default = http;\r\n\n\n/***/ })\n/******/ ]);\n});"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "moduleIdentifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "moduleName": "./index.ts",
+          "loc": "",
+          "name": "index.min",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+      "name": "./index.ts",
+      "index": 0,
+      "index2": 1,
+      "size": 7712,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "\"use strict\";\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\r\n    return new (P || (P = Promise))(function (resolve, reject) {\r\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\r\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\r\n        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }\r\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\r\n    });\r\n};\r\nvar __generator = (this && this.__generator) || function (thisArg, body) {\r\n    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;\r\n    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { return this; }), g;\r\n    function verb(n) { return function (v) { return step([n, v]); }; }\r\n    function step(op) {\r\n        if (f) throw new TypeError(\"Generator is already executing.\");\r\n        while (_) try {\r\n            if (f = 1, y && (t = y[op[0] & 2 ? \"return\" : op[0] ? \"throw\" : \"next\"]) && !(t = t.call(y, op[1])).done) return t;\r\n            if (y = 0, t) op = [0, t.value];\r\n            switch (op[0]) {\r\n                case 0: case 1: t = op; break;\r\n                case 4: _.label++; return { value: op[1], done: false };\r\n                case 5: _.label++; y = op[1]; op = [0]; continue;\r\n                case 7: op = _.ops.pop(); _.trys.pop(); continue;\r\n                default:\r\n                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }\r\n                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }\r\n                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }\r\n                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }\r\n                    if (t[2]) _.ops.pop();\r\n                    _.trys.pop(); continue;\r\n            }\r\n            op = body.call(thisArg, _);\r\n        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }\r\n        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };\r\n    }\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar gm_http_1 = require(\"gm-http\");\r\nvar Topic = (function () {\r\n    function Topic() {\r\n    }\r\n    Topic.prototype.init = function () {\r\n        var _this = this;\r\n        this.makeSureFetchButton();\r\n        this.onStateChange(function () {\r\n            var timer = setInterval(function () {\r\n                clearInterval(timer);\r\n                _this.makeSureFetchButton();\r\n            }, 500);\r\n        });\r\n    };\r\n    Topic.prototype.makeSureFetchButton = function () {\r\n        var $topicsContainer = document.getElementById('topics-list-container');\r\n        var $manageTopics = document.querySelector('.js-repo-topics-form-toggle');\r\n        if (!$topicsContainer || !$manageTopics)\r\n            return;\r\n        $topicsContainer.appendChild(this.createButton());\r\n    };\r\n    Topic.prototype.createButton = function () {\r\n        var $button = document.createElement('button');\r\n        $button.className = 'btn-link';\r\n        $button.type = 'button';\r\n        $button.id = 'fetch-from-package';\r\n        $button.style.color = '#4CAF50';\r\n        $button.innerHTML = 'Fetch from package.json';\r\n        $button.onclick = this.onclickHandler.bind(this);\r\n        return $button;\r\n    };\r\n    Topic.prototype.onStateChange = function (func) {\r\n        addEventListener('click', function (event) {\r\n            var $done = document.querySelector('button.js-repo-topics-form-done');\r\n            if (event.target !== $done)\r\n                return;\r\n            func(event);\r\n        }, false);\r\n    };\r\n    Topic.prototype.onclickHandler = function (event) {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            function check() {\r\n                var $formUl = document.querySelector('.js-tag-input-selected-tags');\r\n                if (!$formUl)\r\n                    return;\r\n                clearInterval(timer);\r\n                var formValues = Array.from($formUl.querySelectorAll('input')).map(function ($input) { return $input.value; });\r\n                var keywords = packageJson['keywords'] || [];\r\n                var $input = document.querySelector('#repo_topics');\r\n                keywords\r\n                    .filter(function (kw) { return kw; })\r\n                    .filter(function (kw) { return formValues.findIndex(function (v) { return v === kw; }) < 0; })\r\n                    .forEach(function (keyword) {\r\n                    $input.value = keyword.replace(/\\./g, '-');\r\n                    $input.click();\r\n                    $input.blur();\r\n                });\r\n                $input.focus();\r\n            }\r\n            var $button, packageJson, err_1, timer;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        event.preventDefault();\r\n                        $button = document.querySelector('.btn-link.js-repo-topics-form-toggle.js-details-target');\r\n                        if (!$button)\r\n                            return [2 /*return*/, console.warn(\"Can't found the button to show topic...\")];\r\n                        $button.click();\r\n                        packageJson = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, this.fetchPackage()];\r\n                    case 2:\r\n                        packageJson = _a.sent();\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_1 = _a.sent();\r\n                        console.error(err_1);\r\n                        return [3 /*break*/, 4];\r\n                    case 4:\r\n                        timer = setInterval(check, 500);\r\n                        return [2 /*return*/];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    Topic.prototype.fetchPackage = function () {\r\n        return __awaiter(this, void 0, void 0, function () {\r\n            var $package, packageUrl, res, err_2;\r\n            return __generator(this, function (_a) {\r\n                switch (_a.label) {\r\n                    case 0:\r\n                        $package = document.querySelector('tr.js-navigation-item td.content a[title=\"package.json\"]');\r\n                        packageUrl = $package.href;\r\n                        packageUrl =\r\n                            packageUrl\r\n                                .replace('/blob/', '/')\r\n                                .replace('github', 'raw.githubusercontent') + (\"?v=\" + Math.random());\r\n                        res = {};\r\n                        _a.label = 1;\r\n                    case 1:\r\n                        _a.trys.push([1, 3, , 4]);\r\n                        return [4 /*yield*/, gm_http_1.default.get(packageUrl)];\r\n                    case 2:\r\n                        res = _a.sent();\r\n                        res = JSON.parse(res.response);\r\n                        return [3 /*break*/, 4];\r\n                    case 3:\r\n                        err_2 = _a.sent();\r\n                        console.error(err_2);\r\n                        return [3 /*break*/, 4];\r\n                    case 4: return [2 /*return*/, res];\r\n                }\r\n            });\r\n        });\r\n    };\r\n    return Topic;\r\n}());\r\nnew Topic();\r\n"
+    },
+    {
+      "id": 1,
+      "identifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\gm-http\\dist\\index.js",
+      "name": "./node_modules/gm-http/dist/index.js",
+      "index": 1,
+      "index2": 0,
+      "size": 6473,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0,
+        1
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+      "issuerId": 0,
+      "issuerName": "./index.ts",
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\node_modules\\ts-loader\\index.js!C:\\Users\\axetroy\\gpm\\github.com\\axetroy\\gm-auto-topic\\index.ts",
+          "module": "./index.ts",
+          "moduleName": "./index.ts",
+          "type": "cjs require",
+          "userRequest": "gm-http",
+          "loc": "38:16-34"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "(function webpackUniversalModuleDefinition(root, factory) {\n\tif(typeof exports === 'object' && typeof module === 'object')\n\t\tmodule.exports = factory();\n\telse if(typeof define === 'function' && define.amd)\n\t\tdefine([], factory);\n\telse if(typeof exports === 'object')\n\t\texports[\"gmHttp\"] = factory();\n\telse\n\t\troot[\"gmHttp\"] = factory();\n})(this, function() {\nreturn /******/ (function(modules) { // webpackBootstrap\n/******/ \t// The module cache\n/******/ \tvar installedModules = {};\n/******/\n/******/ \t// The require function\n/******/ \tfunction __webpack_require__(moduleId) {\n/******/\n/******/ \t\t// Check if module is in cache\n/******/ \t\tif(installedModules[moduleId]) {\n/******/ \t\t\treturn installedModules[moduleId].exports;\n/******/ \t\t}\n/******/ \t\t// Create a new module (and put it into the cache)\n/******/ \t\tvar module = installedModules[moduleId] = {\n/******/ \t\t\ti: moduleId,\n/******/ \t\t\tl: false,\n/******/ \t\t\texports: {}\n/******/ \t\t};\n/******/\n/******/ \t\t// Execute the module function\n/******/ \t\tmodules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n/******/\n/******/ \t\t// Flag the module as loaded\n/******/ \t\tmodule.l = true;\n/******/\n/******/ \t\t// Return the exports of the module\n/******/ \t\treturn module.exports;\n/******/ \t}\n/******/\n/******/\n/******/ \t// expose the modules object (__webpack_modules__)\n/******/ \t__webpack_require__.m = modules;\n/******/\n/******/ \t// expose the module cache\n/******/ \t__webpack_require__.c = installedModules;\n/******/\n/******/ \t// define getter function for harmony exports\n/******/ \t__webpack_require__.d = function(exports, name, getter) {\n/******/ \t\tif(!__webpack_require__.o(exports, name)) {\n/******/ \t\t\tObject.defineProperty(exports, name, {\n/******/ \t\t\t\tconfigurable: false,\n/******/ \t\t\t\tenumerable: true,\n/******/ \t\t\t\tget: getter\n/******/ \t\t\t});\n/******/ \t\t}\n/******/ \t};\n/******/\n/******/ \t// getDefaultExport function for compatibility with non-harmony modules\n/******/ \t__webpack_require__.n = function(module) {\n/******/ \t\tvar getter = module && module.__esModule ?\n/******/ \t\t\tfunction getDefault() { return module['default']; } :\n/******/ \t\t\tfunction getModuleExports() { return module; };\n/******/ \t\t__webpack_require__.d(getter, 'a', getter);\n/******/ \t\treturn getter;\n/******/ \t};\n/******/\n/******/ \t// Object.prototype.hasOwnProperty.call\n/******/ \t__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };\n/******/\n/******/ \t// __webpack_public_path__\n/******/ \t__webpack_require__.p = \"\";\n/******/\n/******/ \t// Load entry module and return exports\n/******/ \treturn __webpack_require__(__webpack_require__.s = 0);\n/******/ })\n/************************************************************************/\n/******/ ([\n/* 0 */\n/***/ (function(module, exports, __webpack_require__) {\n\n\"use strict\";\n\r\n/**\r\n * Created by axetroy on 17-6-23.\r\n */\r\n/// <reference path=\"./index.d.ts\" />\r\nvar __assign = (this && this.__assign) || Object.assign || function(t) {\r\n    for (var s, i = 1, n = arguments.length; i < n; i++) {\r\n        s = arguments[i];\r\n        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\r\n            t[p] = s[p];\r\n    }\r\n    return t;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nfunction isFunction(func) {\r\n    return typeof func === 'function';\r\n}\r\nvar Http = (function () {\r\n    function Http(config) {\r\n        this.config = config;\r\n    }\r\n    Http.prototype.create = function (config) {\r\n        return new Http(config);\r\n    };\r\n    Http.prototype.request = function (method, url, data, header, config) {\r\n        if (data === void 0) { data = ''; }\r\n        if (header === void 0) { header = {}; }\r\n        if (config === void 0) { config = {}; }\r\n        return new Promise(function (resolve, reject) {\r\n            var commonRequestConfig = {\r\n                method: method,\r\n                url: url,\r\n                data: data,\r\n                header: header\r\n            };\r\n            var GM_xmlhttpRequestConfig = __assign({}, commonRequestConfig, config);\r\n            var onreadystatechange = GM_xmlhttpRequestConfig.onreadystatechange, onerror = GM_xmlhttpRequestConfig.onerror, onabort = GM_xmlhttpRequestConfig.onabort, ontimeout = GM_xmlhttpRequestConfig.ontimeout;\r\n            GM_xmlhttpRequestConfig.synchronous = true; // async\r\n            GM_xmlhttpRequestConfig.onreadystatechange = function (response) {\r\n                isFunction(onreadystatechange) &&\r\n                    onreadystatechange.call(this, response);\r\n                console.log(response.readyState);\r\n                if (response.readyState !== 4)\r\n                    return;\r\n                response.status >= 200 && response.status < 400 && response.finalUrl\r\n                    ? resolve(response)\r\n                    : reject(response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onerror = function (response) {\r\n                isFunction(onerror) && onerror.call(this, response);\r\n            };\r\n            GM_xmlhttpRequestConfig.onabort = function (response) {\r\n                isFunction(onabort) && onabort.call(this, response);\r\n                reject(response);\r\n                resolve();\r\n            };\r\n            GM_xmlhttpRequestConfig.ontimeout = function (response) {\r\n                isFunction(ontimeout) && ontimeout.call(this, response);\r\n                reject(response);\r\n            };\r\n            console.log(GM_xmlhttpRequestConfig);\r\n            GM_xmlhttpRequest(__assign({}, GM_xmlhttpRequestConfig));\r\n        });\r\n    };\r\n    Http.prototype.get = function (url, data, header, config) {\r\n        return this.request('GET', url, data, header, config);\r\n    };\r\n    Http.prototype.post = function (url, data, header, config) {\r\n        return this.request('POST', url, data, header, config);\r\n    };\r\n    Http.prototype.put = function (url, data, header, config) {\r\n        return this.request('PUT', url, data, header, config);\r\n    };\r\n    Http.prototype['delete'] = function (url, data, header, config) {\r\n        return this.request('DELETE', url, data, header, config);\r\n    };\r\n    Http.prototype.head = function (url, data, header, config) {\r\n        return this.request('HEAD', url, data, header, config);\r\n    };\r\n    return Http;\r\n}());\r\nvar timeout = 5000;\r\nexports.timeout = timeout;\r\nvar http = new Http({ timeout: timeout });\r\nexports.http = http;\r\nexports.default = http;\r\n\n\n/***/ })\n/******/ ]);\n});"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
