@@ -10,6 +10,11 @@
     "generate": "all-contributors generate",
     "deploy": "gh-pages -d ./dist"
   },
+  "keywords": [
+    "typescript",
+    "github",
+    "topic"
+  ],
   "author": "Axetroy",
   "license": "ISC",
   "devDependencies": {
